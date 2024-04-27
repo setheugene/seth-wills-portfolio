@@ -1,0 +1,7 @@
+webpack.mix.js
+tailwind.js
+tailwind.config.js
+resources/js/plugins/*.js
+resources/js/vendor/*.js
+lib/LL_Wysiwyg/plugins/*/*.js
+/node_modules/

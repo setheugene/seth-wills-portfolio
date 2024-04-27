@@ -1,0 +1,25 @@
+/*
+ * import vendors and third party
+ * scripts here.Magnific, slick ect
+ */
+@import '../../node_modules/magnific-popup/dist/magnific-popup.css';
+@import '../../node_modules/slick-carousel/slick/slick.css';
+@import '../../node_modules/slick-carousel/slick/slick-theme.css';
+
+/* import ll base styles */
+@import 'base/variables';
+@import 'base/utilities';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/grid';
+@import 'base/icon';
+
+/* import partials */
+@import-glob 'partials/*.css';
+
+/* import pages */
+@import-glob 'pages/*.css';
+
+@import "tailwindcss/utilities";
+
+@import-glob '../../components/**/*.css';

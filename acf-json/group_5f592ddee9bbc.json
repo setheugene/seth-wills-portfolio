@@ -1,0 +1,52 @@
+{
+    "key": "group_5f592ddee9bbc",
+    "title": "Utility : Background Color",
+    "fields": [
+        {
+            "key": "field_5f592de5bfade",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bg-brand-ivory": "<div class=\"bg-white border border-black w-5 h-5\">ivory<\/div>",
+                "bg-brand-jet": "<div class=\"bg-black w-5 h-5\"><\/div>",
+                "bg-brand-dark-blue": "<div class=\"bg-brand-dark-blue w-5 h-5\"><\/div>",
+                "bg-brand-aqua-blue": "<div class=\"bg-brand-aqua-blue w-5 h-5\"><\/div>",
+                "bg-brand-pale-blue": "<div class=\"bg-brand-pale-blue w-5 h-5\"><\/div>"
+            },
+            "default_value": "bg-white",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "add_to_components": 0,
+    "modified": 1713660979
+}

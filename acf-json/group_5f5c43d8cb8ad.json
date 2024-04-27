@@ -1,0 +1,127 @@
+{
+    "key": "group_5f5c43d8cb8ad",
+    "title": "Utility : Image",
+    "fields": [
+        {
+            "key": "field_5f5c43d8ce9c7",
+            "label": "Image",
+            "name": "image_id",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f5c43d8cea01",
+            "label": "Image Focus Point",
+            "name": "image_focus_point",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "button-grid",
+                "id": ""
+            },
+            "choices": {
+                "object-left-top": "<div class=\"h-5 w-5\"><\/div>",
+                "object-top": "<div class=\"h-5 w-5\"><\/div>",
+                "object-right-top": "<div class=\"h-5 w-5\"><\/div>",
+                "object-left": "<div class=\"h-5 w-5\"><\/div>",
+                "object-center": "<div class=\"h-5 w-5\"><\/div>",
+                "object-right": "<div class=\"h-5 w-5\"><\/div>",
+                "object-left-bottom": "<div class=\"h-5 w-5\"><\/div>",
+                "object-bottom": "<div class=\"h-5 w-5\"><\/div>",
+                "object-right-bottom": "<div class=\"h-5 w-5\"><\/div>"
+            },
+            "allow_null": 0,
+            "default_value": "object-center",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_62bf246b1eb94",
+            "label": "Image Fit",
+            "name": "image_fit",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "object-cover": "Cover",
+                "object-contain": "Contain"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_637bc074e9119",
+            "label": "Lazy Load",
+            "name": "image_loading",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Lazy loading delays the loading of an image until the user scrolls down the page and the image about to be visible to the user. This improves page speed load and SEO. It is HIGHLY recommended to only remove lazy loading for images that are visible on page load. ie: Hero Banner images",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "message": "Lazy load image",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1679954340
+}

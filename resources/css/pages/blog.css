@@ -1,0 +1,165 @@
+/**
+ * Blog Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the pages
+ *
+ */
+
+.blog {
+
+}
+
+.blog-page {
+  @apply py-24;
+}
+
+.blog__headings {
+  @apply mb-16 text-center;
+}
+
+.blog__columns {
+  @apply grid gap-y-8 lg:grid-cols-3 gap-x-gutter-full;
+}
+
+.blog__pagination {
+  @apply flex justify-center mt-16 text-center gap-x-4;
+
+  a,
+  span {
+    @apply inline-block;
+  }
+
+  span,
+  a:hover {
+    @apply underline;
+  }
+}
+
+/*
+ * ------------- POST CARD --------------
+ */
+
+.post__card {
+  @apply flex flex-col;
+  /* height: 100%; */
+
+  .post__category-corner-tag {
+    @apply absolute top-0 left-0;
+  }
+
+  .post__content {
+    @apply my-5;
+  }
+
+  .post__read-more-wrapper {
+    @apply mt-auto;
+  }
+}
+
+/*
+ * ------------ BLOCKS ---------------
+ */
+
+.blog__block-title {
+  @apply mb-3 underline;
+}
+
+.blog__block-list.categories {
+  a {
+    &:hover {
+      @apply underline;
+    }
+
+    &.is-active {
+      @apply font-bold;
+    }
+  }
+}
+
+.blog__block-list.tags {
+  @apply flex flex-wrap gap-3;
+
+  a {
+    @apply py-1.5 px-2.5 rounded bg-black text-white text-xs uppercase;
+
+    &:hover {
+      @apply text-black bg-white;
+    }
+  }
+}
+
+.social-share {
+  @apply flex flex-wrap gap-3;
+
+  a,
+  button {
+    @apply inline-block;
+
+    .icon {
+
+    }
+  }
+
+  .social-share__item {
+    @apply relative;
+
+    .copied-text {
+      @apply absolute duration-200 opacity-0 pointer-events-none top-1/2 left-full;
+      transform: translateY(-50%) translateX(0);
+
+      &.is-copied {
+        @apply opacity-100;
+        transform: translateY(-50%) translateX(10px);
+      }
+    }
+  }
+}
+
+/*
+ * ------------- SIDEBAR --------------
+ */
+
+.blog__sidebar-toggle {
+  &.is-open {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.blog__sidebar-inner {
+  &.is-open {
+    display: block;
+  }
+}
+
+/*
+ * ------------- SINGLE POST --------------
+ */
+
+.blog-page--single {
+  .blog__sidebar {
+    @apply order-1;
+
+    @screen lg {
+      @apply order-none;
+    }
+  }
+
+  .yoast-breadcrumb__link {
+    @apply text-sm;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+}
+
+.single-post__headings {
+  @apply mb-5 text-center;
+}
+
+.single-post__meta {
+  @apply flex justify-center mb-10 gap-x-3;
+}

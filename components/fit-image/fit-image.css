@@ -1,0 +1,20 @@
+/**
+ * Fit Image Styles
+ * ----------------------------------------------------------------------------
+ *
+ * Needs to have a parent with some sort of positioning value applied to it
+ *
+ */
+.fit-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}

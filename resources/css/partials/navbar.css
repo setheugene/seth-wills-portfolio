@@ -1,0 +1,93 @@
+/*
+ * navbar base styles are using plain css with some tailwind
+ * sprinkled in. @apply tailwind utilities for theme specifics
+ * like font sizes, colors, and even spacings as necessary. The
+ * rest we will just do in plain css.
+ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbarHeight);
+  z-index: 90;
+
+
+  /*
+   * quality of life enhancement for logged in admins
+   * not on IE
+   */
+  .logged-in.admin-bar & {
+    top: var(--wp-admin--admin-bar--height);
+  }
+}
+
+.navbar-toggle {
+  /* Set the width and height of your toggle button and height of the lines and everything else should be calculated accordingly */
+  --toggleWidth: 20px;
+  --toggleHeight: 12px;
+  --lineHeight: 1px;
+  --bottomPosition: calc(var(--toggleHeight) - var(--lineHeight));
+  --middlePosition: calc(var(--bottomPosition) / 2 );
+
+  position: relative;
+  display: inline-block;
+  width: var(--toggleWidth);
+  height: var(--toggleHeight);
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.navbar-toggle.is-open {
+  .navbar-toggle-icon {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center center;
+
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      transform-origin: center center;
+    }
+  }
+}
+
+.navbar-toggle-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: var(--toggleWidth);
+  height: var(--lineHeight);
+  background-color: currentColor;
+  transition: all 0.15s ease;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: var(--toggleWidth);
+    height: var(--lineHeight);
+    background-color: currentColor;
+  }
+
+  &::before {
+    top: var(--middlePosition);
+  }
+
+  &::after {
+    top: var(--bottomPosition);
+    transition: all 0.15s ease;
+  }
+}
+

@@ -1,0 +1,40 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+########################
+# Theme specific files #
+########################
+.sass-cache
+assets/vendor/*
+config.json
+node_modules/
+
+########################
+# Minified files #
+########################
+assets/css/*.css
+assets/css/*.min.css
+assets/css/*.min.css.map
+assets/css/*.css.map
+assets/js/*.min.js
+assets/js/*.min.js.map
+assets/js/*.js
+assets/*.json
+
+######################
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/settings.json
+.idea
+
+#############
+# Log files #
+#############
+[Ll]ogs/

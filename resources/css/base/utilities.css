@@ -1,0 +1,141 @@
+/*
+ * Additional Utility classes
+ *
+ * Only add tailwind variations if
+ * they're actually needed. Remember, variations
+ * create many versions of a class which could
+ * potentially get out of hand really quick
+ */
+
+/*
+ * Wordpress WYSIWYG Figure alignment override
+ */
+figure, img {
+  &.alignright {
+    @apply float-right mt-0 mb-4 ml-3 mr-0 text-right;
+
+    img {
+      @apply inline-block;
+    }
+  }
+
+  &.alignleft {
+    @apply float-left mt-0 mb-4 ml-0 mr-3 text-left;
+
+    img {
+      @apply inline-block;
+    }
+  }
+
+  &.aligncenter {
+    @apply block mx-auto mt-0 mb-4 text-center;
+
+    img {
+      @apply inline-block;
+    }
+  }
+}
+
+.embed-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 1.875rem;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.aspect-square::before,
+.aspect-1\/1::before {
+  content:'';
+  display: block;
+  padding-top: 100%;
+}
+
+.aspect-2\/1::before {
+  content:'';
+  display: block;
+  padding-top: 50%;
+}
+
+.aspect-1\/2::before {
+  content:'';
+  display: block;
+  padding-top: 200%;
+}
+
+.aspect-4\/3::before {
+  content:'';
+  display: block;
+  padding-top: 75%;
+}
+
+.aspect-3\/4::before {
+  content:'';
+  display: block;
+  padding-top: 133.33%;
+}
+
+.aspect-16\/9::before {
+  content:'';
+  display: block;
+  padding-top: 56.25%;
+}
+
+.aspect-3\/5::before {
+  content:'';
+  display: block;
+  padding-top: 166%;
+}
+
+.aspect-5\/3::before {
+  content:'';
+  display: block;
+  padding-top: 60%;
+}
+
+.aspect-5\/4::before {
+  content:'';
+  display: block;
+  padding-top: 80%;
+}
+
+.aspect-2\/3::before {
+  content:'';
+  display: block;
+  padding-top: 150%;
+}
+
+.aspect-3\/2::before {
+  content:'';
+  display: block;
+  padding-top: 66.666667%;
+}
+
+.aspect-10\/2::before {
+  content:'';
+  display: block;
+  padding-top: 150%;
+}
+
+.aspect-10\/4::before {
+  content:'';
+  display: block;
+  padding-top: 150%;
+}
+
+.wowza {
+  background: tomato;
+}
+
+.h-screen--reduced {
+  height: calc(100vh - var(--topOffset));
+}

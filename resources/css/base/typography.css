@@ -1,0 +1,310 @@
+@font-face {
+  font-family: 'Teko';
+  src: url('../fonts/Teko-Bold.woff2') format('woff2'),
+      url('../fonts/Teko-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Teko';
+  src: url('../fonts/Teko-Light.woff2') format('woff2'),
+      url('../fonts/Teko-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Teko';
+  src: url('../fonts/Teko-Medium.woff2') format('woff2'),
+      url('../fonts/Teko-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Teko';
+  src: url('../fonts/Teko-SemiBold.woff2') format('woff2'),
+      url('../fonts/Teko-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Teko';
+  src: url('../fonts/Teko-Regular.woff2') format('woff2'),
+      url('../fonts/Teko-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.hdg-1, .hdg-2, .hdg-3, .hdg-4, .hdg-5, .hdg-6, .paragraph-default, .paragraph-large, .paragraph-small, .paragraph-xsmall {
+  @apply leading-normal;
+}
+
+.hdg-1 {
+  @apply text-5xl;
+
+  @screen md {
+    @apply text-6xl;
+  }
+}
+
+.hdg-2 {
+  @apply text-4xl leading-tight;
+
+  @screen md {
+    @apply text-5xl;
+  }
+}
+
+.hdg-3 {
+  @apply text-4xl leading-tight;
+}
+
+.hdg-4 {
+  @apply text-3xl leading-tight;
+}
+
+.hdg-5 {
+  @apply text-2xl leading-snug;
+}
+
+.hdg-6 {
+  @apply text-xl leading-tight;
+}
+
+.paragraph-default {
+  @apply text-base leading-normal;
+}
+
+.paragraph-large {
+  @apply text-lg leading-normal;
+}
+
+.paragraph-small {
+  @apply text-sm leading-normal;
+}
+
+.paragraph-xsmall {
+  @apply text-xs leading-normal;
+}
+
+/*
+ * Utility overwrites for automatically changing text colors
+ * based on background color. Will need to add any necessary
+ * possible background colors to the this. This is so that the user
+ * does not have to manually select colors within the WYSIWYG
+ * to fix the color scheme. Example, turning all text white
+ * if there is a black background. Otherwise, they wouldn't be able
+ * to see the text within the wysiwyg.
+ *
+ * Notice that it has classes for targeting the #tinymce.{background-color} for the
+ * backend, and then .{background-color} .wysiwyg for the front end.
+ *
+ * If you have to set default colors for any text classes, then you have
+ * to make these selectors more complex. Using the .hdg-1 color example from above
+ * This targets the normal non text class h1 element, as well as checks for
+ * any text color utilities. This is so the color can still be overwritten as expected
+ * within the WYSIWYG formats
+
+  #tinymce:is(.bg-black),
+  :is(.bg-black) .wysiwyg {
+    :is(h1, h2, h3 ):not([class*="hdg-"], [class*="paragraph-"], [class*="text-brand"], [class*="text-white"], [class*="text-black"]),
+    .hdg-1,
+    .hdg-2,
+    .hdg-3 {
+      color: white;
+    }
+  }
+ */
+#tinymce:is(.bg-black, .bg-brand-jet),
+:is(.bg-black, .bg-image--overlay-dark, .bg-brand-jet) .wysiwyg {
+  color: theme(colors.brand.ivory);
+}
+
+/*
+ * .wysiwyg is a wrapper class for any content that will be
+ * echoed out via any wysiwyg editor. Be sure to use
+ * @apply {utility-class} when declaring text styles
+ * when possible. #tinymce selector is used to target the body of the
+ * WYSIWYGS on the backend of the site. This should not be targeted in production
+ * on the front end anywhere on the site
+ */
+
+:where(.wysiwyg, #tinymce) {
+  /*
+   * zero out margins for first and
+   * last elements within a WYSIWYG
+   * to remove any unwanted vertical spacing
+   */
+  & > *:first-child {
+    &:not([class*="mt-"]) {
+      margin-top: 0 !important;
+    }
+  }
+
+  & > *:last-child {
+    &:not([class*="mb-"]) {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  /*
+   * set defaults to elements in the WYSIWYG that
+   * do not have a style format/class applied to them. Notice that
+   * by default, bottom margins get set. It's best to set bottom margin
+   * rules for the WYSIWYG wrapper and explicitely set bottom margins using
+   * utlities elswhere.
+   */
+  a:not([class*="hdg-"], [class*="paragraph-"], [class*="btn"]) {
+    transition: all .2s;
+    &:hover, &:active, &:focus {
+      @apply text-brand-rust;
+    }
+  }
+
+  :not([class*="hdg-"], [class*="paragraph-"], [class*="gform_"]) {
+    &:where(p) {
+      @extend .paragraph-default;
+    }
+
+    &:where(h1) {
+      @extend .hdg-1;
+    }
+
+    &:where(h2) {
+      @extend .hdg-2;
+    }
+
+    &:where(h3) {
+      @extend .hdg-3;
+    }
+
+    &:where(h4) {
+      @extend .hdg-4;
+    }
+
+    &:where(h5) {
+      @extend .hdg-5;
+    }
+
+    &:where(h6) {
+      @extend .hdg-6;
+    }
+
+    &:where(li) {
+      @extend .paragraph-default;
+    }
+  }
+
+  ul,
+  ol {
+    @apply pl-5 mb-5;
+
+    li {
+      &:not(:last-child) {
+        &:not([class*="mb-"]) {
+          @apply mb-5;
+        }
+      }
+
+      &:last-child {
+        @apply mb-0;
+      }
+    }
+  }
+
+  /*
+   * Set default list styles back to disk
+   * and number
+   */
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  /*
+   * If you need to add any extra styling to specific
+   * text classes, add them here. For instance, when coming
+   * from the WYSIWYG, .hdg-1 needs a specific bottom margin
+   * no matter what element it is applied to.
+   */
+  :not([class*="mb-"]) {
+    &:where( .paragraph-default, p ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-hero ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-1, h1 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-2, h2 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-3, h3 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-4, h4 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-5, h5 ) {
+      @apply mb-5;
+    }
+
+    &:where( .hdg-6, h6 ) {
+      @apply mb-5;
+    }
+
+    &:where( .paragraph-large ) {
+      @apply mb-5;
+    }
+
+    &:where( .paragraph-small ) {
+      @apply mb-5;
+    }
+
+    &:where( .paragraph-xsmall ) {
+      @apply mb-5;
+    }
+  }
+
+  address {
+    @extend .paragraph-small;
+    font-style: normal;
+
+    .street,
+    .streetAddress {
+      display: block;
+    }
+
+    .city::after,
+    .addressLocality::after {
+      content: ',';
+    }
+
+    .phone {
+      display: block;
+      @apply mt-2;
+    }
+  }
+
+  blockquote {
+    @apply pl-4 ml-0 border-l-4 border-brand-primary;
+  }
+}

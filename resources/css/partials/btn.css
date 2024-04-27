@@ -1,0 +1,15 @@
+.btn {
+  @apply inline-block py-3.5 px-8 rounded-lg bg-form-radio-button-unchecked text-white duration-150;
+
+  &:hover {
+    @apply bg-form-radio-button-checked;
+  }
+}
+
+.wysiwyg .btn {
+  @apply mt-5;
+}
+
+.btn-group {
+  @apply grid grid-flow-col gap-5;
+}

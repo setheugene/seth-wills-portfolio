@@ -1,0 +1,38 @@
+/**
+ * Map Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.map {
+  .mapboxgl-canvas {
+    outline: none;
+  }
+
+  .mapboxgl-popup-content {
+    padding: 0 !important;
+    min-width: 173px;
+    border-radius: 4px;
+    color: #505050;
+  }
+
+  .mapboxgl-popup-close-button {
+    right: 6px;
+    top: 0;
+  }
+
+  .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: black !important;
+  }
+
+  .marker {
+    @apply w-8 h-8;
+    background-image: url("../img/map-pin.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+}

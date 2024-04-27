@@ -1,0 +1,17 @@
+/*
+ * Set your global css variables here.
+ * The --navbarHeight is used with the --wp-admin--admin-bar--height (this value is set by wordpress)
+ * in the base.css file to determine the correct --topOffset
+ * value when used to calc 100vh components
+ * Usage example: min-height: calc( 100vh - var(--topOffset) );
+ * --gutter is you full gutter width divided by 2. Currently defaults to 25px
+ * Can be updated with media queries for smaller gutters on smaller screens
+ */
+:root {
+  --navbarHeight: 80px;
+
+  --topOffset: calc( var(--navbarHeight) + var(--wp-admin--admin-bar--height, 0px) );
+
+  --gutter: .5rem;
+}
+

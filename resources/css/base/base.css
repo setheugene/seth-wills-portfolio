@@ -1,0 +1,28 @@
+* {
+  scroll-margin: var(--topOffset);
+}
+
+body:not(.component-preview) {
+  padding-top: var(--topOffset);
+  @apply font-sans text-brand-jet bg-brand-ivory;
+}
+
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+a {
+  transition: all 0.15s ease-in-out;
+
+  &:hover, &:active, &:focus {
+    transition: all 0.15s ease-in-out;
+  }
+}
+
+::selection {
+  background-color: theme(colors.brand.highlight);
+}

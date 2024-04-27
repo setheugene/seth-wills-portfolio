@@ -1,0 +1,361 @@
+/*
+ * Most of the layout styling is being controlled through editing
+ * the actual markup output of gravity forms. This is happening in
+ * /lib/custom-gravity-forms. Further details are in that file
+ */
+.gform_wrapper.gravity-theme.form-skin_wrapper {
+  .gform_title {
+    @apply hdg-3;
+  }
+
+  .gform_description {
+    @apply block mb-8;
+  }
+}
+
+.gform_wrapper.gravity-theme .form-skin {
+  /*
+  * --form-spacing-cols will effect both the grid column spacing and spacing between complex fields
+  * --form-spacing-rows will effect both the grid row spacing and spacing between complex fields
+  * both variables are currently set to the same defaults as gravity forms and can be changed as neccessary or redefined where neccessary for specific classes and selectors
+  */
+  --form-spacing-cols: 2%;
+  --form-spacing-rows: theme('spacing.5');
+  --form-spacing-cols-negative: calc(var(--form-spacing-cols) * -1);
+  --form-spacing-row-negative: calc(var(--form-spacing-rows) * -1);
+
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="file"],
+  input[type="url"],
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    @apply p-4 duration-150 bg-white border border-current rounded-sm;
+
+    &:hover:not(:focus) {
+      filter: drop-shadow(0px 0px 5px rgba(68, 62, 81, 0.32));
+    }
+
+    &:focus {
+      outline: none;
+      @apply shadow-form-focus shadow-form-focus/25;
+    }
+
+    &::placeholder {
+      @apply text-form-placeholder;
+    }
+  }
+
+  /*
+   * unset all default select styles
+   */
+  select {
+    appearance: none;
+
+    &.placeholder-selected {
+      @apply text-form-placeholder;
+    }
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  .ginput_container_select {
+    position: relative;
+  }
+
+  .select-dropdown-arrow {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+    font-size: 1em;
+    z-index: 1;
+  }
+
+  textarea {
+    height: 10em;
+    resize: none;
+    @apply py-3;
+  }
+
+  .gfield_label {
+    @apply block text-sm text-form-placeholder mb-2.5;
+  }
+
+  .gfield_description {
+    @apply text-sm mt-1.5 text-form-description;
+  }
+
+  .gfield_checkbox,
+  .gfield_radio {
+    .gchoice:not(:last-child) {
+      @apply mb-1;
+    }
+  }
+
+  /**
+   * extend visuallyhidden rather than display: none to hide the input to
+   * allow the input to still be accessible by screen readers and keyboards
+   * Note: Changes to checkbox input and label will effect .gfield_consent_label
+   * from the consent field
+   */
+  .ginput_container_checkbox input[type="checkbox"] {
+    @apply sr-only;
+
+    ~label {
+      @apply pl-6 select-none;
+      position: relative;
+
+      &::before {
+        content: '';
+        @apply absolute top-0 left-0 w-4 h-4 border border-current rounded-sm;
+      }
+
+      /* .icon {
+        @apply absolute top-0 left-0;
+      }
+
+      .icon-checkbox-checked {
+        @apply hidden;
+      } */
+    }
+
+    /**
+     * give the focused inputs label a style so keyboard users can tell
+     * which radio / checkbox is focused. Accessibility win
+     */
+    &:focus~label {}
+  }
+
+  .gfield_type_radio:not(.radio-style--buttons) .ginput_container_radio input[type="radio"] {
+    @apply sr-only;
+
+    ~label {
+      @apply pl-6 select-none;
+      position: relative;
+
+      &::before {
+        content: '';
+        @apply absolute top-0 left-0 w-4 h-4 border border-current rounded-full;
+      }
+
+      /* .icon {
+        @apply absolute top-0 left-0;
+      }
+
+      .icon-radio-selected {
+        @apply hidden;
+      } */
+    }
+
+    /**
+     * give the focused inputs label a style so keyboard users can tell
+     * which radio / checkbox is focused. Accessibility win
+     */
+    &:focus~label {}
+  }
+
+  .ginput_container_checkbox input[type="checkbox"]:checked~label {
+    &::after {
+      content: '';
+      @apply absolute w-2 h-2 top-1 left-1 bg-form-focus;
+      border-radius: 1px;
+    }
+
+    /* .icon-checkbox {
+      @apply hidden;
+    }
+
+    .icon-checkbox-checked {
+      @apply block;
+    } */
+  }
+
+  .gfield_type_radio:not(.radio-style--buttons) .ginput_container_radio input[type="radio"]:checked~label {
+    &::after {
+      content: '';
+      @apply absolute w-2 h-2 rounded-full top-1 left-1 bg-form-focus;
+    }
+
+    /* .icon-radio {
+      @apply hidden;
+    }
+
+    .icon-radio-selected {
+      @apply block;
+    } */
+  }
+
+  .radio-style--buttons .gfield_radio {
+    @apply flex flex-wrap items-stretch justify-start -mx-2 -mb-3;
+
+    .gchoice {
+      @apply px-2 mb-3;
+    }
+
+    .icon {
+      @apply hidden;
+    }
+  }
+
+  .radio-style--buttons .ginput_container_radio input[type="radio"] {
+    @apply sr-only;
+
+    ~label {
+      @apply inline-block py-3.5 px-8 rounded-lg bg-form-radio-button-unchecked text-white duration-150;
+    }
+
+    /**
+     * give the focused inputs label a style so keyboard users can tell
+     * which radio / checkbox is focused. Accessibility win
+     */
+    &:focus~label {}
+  }
+
+  .radio-style--buttons .ginput_container_radio input[type="radio"]:hover,
+  .radio-style--buttons .ginput_container_radio input[type="radio"]:checked {
+    ~label {
+      @apply bg-form-radio-button-checked;
+    }
+  }
+
+  .ginput_container_consent {
+    input {
+      @apply sr-only;
+    }
+
+    label {
+      @apply relative flex items-center;
+      padding-left: 84px;
+      min-height: 40px;
+
+      &::before {
+        content: '';
+        width: 72px;
+        height: 40px;
+        @apply absolute top-0 left-0 block duration-150 rounded-full bg-form-toggle-unchecked;
+        box-shadow: inset 0px 0px 11px -6px rgba(0, 0, 0, 0.75);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        @apply absolute w-8 h-8 duration-150 bg-white rounded-full top-1 left-1;
+        box-shadow: 2px 5.5px 5px -3px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    input:checked~label {
+      &::before {
+        @apply bg-form-toggle-checked;
+      }
+
+      &::after {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  .gform_footer {
+    @apply mt-8;
+
+    button[type="submit"] {
+      @apply inline-block py-3.5 px-8 rounded-full bg-button text-white duration-150;
+
+      &:hover,
+      &:focus,
+      &:active {
+        @apply bg-button-hover;
+      }
+    }
+  }
+
+  .gform_fields {
+    column-gap: var(--form-spacing-cols);
+    row-gap: var(--form-spacing-rows);
+  }
+
+  /*
+   * Extend styling ginput_complex
+   * to act as rows. Make all direct children col's
+   * Note: Possibly unnecessary on future versions of gravity
+   * forms?
+   */
+  .ginput_complex {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: calc(var(--form-spacing-cols-negative) / 2);
+    margin-right: calc(var(--form-spacing-cols-negative) / 2);
+    row-gap: var(--form-spacing-rows);
+
+    &>span,
+    div {
+      flex: 1;
+      padding-left: calc(var(--form-spacing-cols) / 2);
+      padding-right: calc(var(--form-spacing-cols) / 2);
+
+      &.ginput_full {
+        flex: 0 0 100%;
+      }
+
+      &.ginput_left,
+      &.ginput_right {
+        flex: 0 0 50%;
+      }
+    }
+  }
+}
+
+.gform_wrapper.gravity-theme .form-skin.form-skin--lg {
+
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="file"],
+  input[type="url"],
+  select,
+  textarea {
+    @apply rounded-lg;
+  }
+}
+
+.gform_wrapper.gravity-theme .form-skin.form-skin--pill {
+
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="file"],
+  input[type="url"],
+  select {
+    @apply rounded-full;
+  }
+
+  textarea {
+    @apply rounded-3xl;
+  }
+}
+
+.screen-reader-text,
+.gform_required_legend {
+  @apply sr-only;
+}
+
+/* if you want to hide hidden validation field for anti spam honeypot */
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+  @apply sr-only;
+}

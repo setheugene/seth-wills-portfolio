@@ -1,0 +1,116 @@
+/**
+ * Loop Video Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.loop-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.loop-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: none !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-image-container {
+  .loop-video-image{
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    &.image-fade {
+      opacity: 0;
+    }
+  }
+
+    /* use if loadeddata causes performace issues */
+/*     &.mobile.no-delay .loop-video-image {
+      @apply -z-1;
+    }
+
+    &.desktop .loop-video-image {
+      @apply z-10;
+      @screen md {
+        @apply -z-1;
+      }
+    } */
+}
+
+/* play/pause button */
+
+/* button styles */
+.loop-video-btn {
+  @apply absolute bottom-0 right-0 z-30 flex items-center justify-center w-12 h-12 text-white duration-300 border-2 border-white rounded-full cursor-pointer mr-gutter mb-gutter;
+
+  &:hover {
+    @apply text-black bg-white;
+  }
+
+  svg {
+    @apply text-lg;
+  }
+}
+
+/* handles showing / hiding svgs */
+.loop-video-toggle-state {
+  &:focus {
+    @apply rounded-full;
+  }
+
+  .icon-play-loop {
+    @apply hidden;
+  }
+
+  .icon-pause-loop {
+    @apply block;
+  }
+
+  &.is-paused {
+    .icon-play-loop {
+      @apply block;
+    }
+
+    .icon-pause-loop {
+      @apply hidden;
+    }
+  }
+}
+
+*::-webkit-media-controls-panel {
+  display: none!important;
+  appearance: none;
+}
+
+/* Old shadow dom for play button */
+
+*::-webkit-media-controls-play-button {
+  display: none!important;
+  appearance: none;
+}
+
+/* New shadow dom for play button */
+
+/* This one works! */
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  appearance: none;
+}

@@ -1,0 +1,272 @@
+.acf-field p.description {
+  border-left: 2px solid #0073aa;
+  padding-left: 0.5em !important;
+}
+
+.xdebug-var-dump {
+  padding-left: 200px;
+}
+
+.group-label,
+.target-name,
+.hidden-field .acf-input-wrap {
+  display: none;
+}
+
+.group-title,
+.target-title {
+  position: relative;
+  display: block;
+  margin: 1em 0 1em 35px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: bold;
+  outline: none;
+  caret-color: black;
+  width: 60%;
+  border-radius: 2px;
+}
+
+
+.group-title:hover,
+.target-title:hover {
+  box-shadow: rgb(248, 250, 252) 0 0 0 4px, rgb(147 197 253) 0 0 0 6px, rgba(0, 0, 0, 0.05) 0 1px 2px 0;
+}
+
+.target-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transform: translateY(-100%);
+  padding: 10px 14px;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
+  display: none;
+  color: #6B7280;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 300px;
+}
+
+.target-link::before {
+  content: 'Click to copy link:';
+  display: block;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.target-link.copied::after {
+  content: 'Link Copied!';
+  display: block;
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  font-size: 10px;
+  color: #34D399;
+}
+
+.target-link.visible {
+  display: block;
+}
+
+.group-title::before,
+.target-title::before {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  color: #64748b;
+}
+
+.group-title::before {
+  content: 'Component Label:';
+}
+
+.target-title::before {
+  content: 'Jump Link Target:';
+}
+
+.group-title {
+  padding-left: calc(94px + 0.5em);
+}
+
+.target-title {
+  padding-left: calc(92px + 0.5em);
+}
+
+.layout.-collapsed .target-title {
+  display: none;
+}
+
+.acf-flexible-content .layout:not(.-collapsed) {
+  border: 2px solid lightgreen;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.w-5 {
+  width: 20px;
+}
+
+.h-5 {
+  height: 20px;
+}
+
+.border {
+  border: 1px solid;
+}
+
+.border-black {
+  border-color: black;
+}
+
+.button-grid .acf-button-group {
+  display: grid;
+  grid-template-columns: repeat(3,auto);
+  grid-template-rows: repeat(3, auto);
+  width: 124px;
+}
+
+.button-grid .acf-button-group label {
+  border-radius: 0 !important;
+  border-bottom: none;
+
+  &:nth-child(7),
+  &:nth-child(8),
+  &:nth-child(9) {
+    border-bottom: #7e8993 solid 1px;
+  }
+}
+
+.acf-icon.-preview {
+  visibility: hidden;
+}
+
+.acf-flexible-content .layout:hover .acf-fc-layout-controls .acf-icon.-preview {
+  visibility: visible;
+}
+
+.acf-icon.-preview:before {
+  content: "\f177";
+}
+
+.acf-icon-grid .acf-button-group {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 54px));
+}
+
+.acf-icon-grid .acf-button-group label {
+  border-radius: 0 !important;
+}
+
+.acf-icon-grid .acf-button-group label svg {
+  width: 32px;
+  height: 32px;
+  max-width: 100%;
+}
+
+.acf-repeater > table:hover .acf-row {
+  opacity: 0.5;
+}
+
+.acf-repeater > table:hover .acf-row:hover {
+  opacity: 1;
+}
+
+.docs__tab {
+  appearance: none;
+  margin-right: 12px;
+  font-size: 16px;
+  border: none;
+  padding: 12px 16px;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.docs__tab.is-active {
+  font-weight: bold;
+  background-color: #EBF8FF;
+  border-top: 1px solid #63B3ED;
+  border-left: 1px solid #63B3ED;
+  border-right: 1px solid #63B3ED;
+}
+
+.docs__panel {
+  display: none;
+  background-color: #EBF8FF;
+  border: 1px solid #63B3ED;
+  padding: 25px;
+}
+
+.docs__panel.is-active {
+  display: block;
+}
+
+.docs__panel hr {
+  border-top-color: #CBCBCB;
+}
+
+.docs__panel ul {
+  list-style: revert;
+  padding-left: 18px;
+}
+
+.docs__panel li p {
+  margin: 0;
+}
+
+.docs__panel table {
+  margin: 24px 0;
+}
+
+.docs__panel table {
+  color: #333;
+  background: white;
+  border: 1px solid grey;
+  font-size: 12pt;
+  border-collapse: collapse;
+}
+
+.docs__panel table thead th,
+.docs__panel table tfoot th {
+  color: #333;
+  text-align: left;
+  background: rgba(0,0,0,.1);
+}
+
+.docs__panel table caption {
+  padding:.5em;
+}
+
+.docs__panel table th,
+.docs__panel table td {
+  padding: .5em;
+  border: 1px solid lightgrey;
+  font-size: 14px;
+}
+
+.docs__panel h3 {
+  font-size: 1.1em;
+}
+
+.docs__panel table.fields-table {
+  position: relative;
+  margin-top: 48px;
+}
+
+.docs__panel table.fields-table::before {
+  content: 'Fields';
+  font-weight: 600;
+  font-size: 14px;
+  position: absolute;
+  top: -24px;
+  left: 0;
+}

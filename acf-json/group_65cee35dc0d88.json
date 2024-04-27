@@ -1,0 +1,55 @@
+{
+  "key": "group_65cee35dc0d88",
+  "title": "Component : Global Component",
+  "fields": [
+    {
+      "key": "field_65cee35e70d85",
+      "label": "Component To Insert",
+      "name": "global_component_id",
+      "aria-label": "",
+      "type": "post_object",
+      "instructions": "The Global Component you select will be placed into this slot.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "documentation_notes": "",
+      "post_type": [
+        "global_component"
+      ],
+      "post_status": [
+        "publish"
+      ],
+      "taxonomy": "",
+      "return_format": "id",
+      "multiple": 0,
+      "allow_null": 0,
+      "bidirectional": 0,
+      "ui": 1,
+      "bidirectional_target": []
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "!=",
+        "value": "global_component"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": false,
+  "description": "",
+  "show_in_rest": 0,
+  "add_to_components": 0,
+  "modified": 1708057807
+}

@@ -1,0 +1,23 @@
+.content-grid {
+  &.is-full-screen {
+    @apply flex items-center;
+
+    &::before {
+      content: '';
+      display: block;
+      min-height: calc( 100vh - var(--topOffset) - ( 64px * 2 ) );
+
+      @screen lg {
+        min-height: calc( 100vh - var(--topOffset) - ( 96px * 2 ) );
+      }
+    }
+
+    > .container {
+      @apply flex-initial w-full;
+    }
+  }
+
+  .icon.alt-background {
+    color: theme(colors.white);
+  }
+}

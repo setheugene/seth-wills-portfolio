@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "heybourn.headwind",
+    "bradgashler.htmltagwrap",
+    "EditorConfig.EditorConfig"
+  ]
+}
