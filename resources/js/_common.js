@@ -9,9 +9,44 @@
  * The routing is enclosed within an anonymous function so that you can
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
+import {gsap} from 'gsap';
+// import {ScrollTrigger} from 'gsap/ScrollTrigger.js';
 ( function( app ) {
   const COMPONENT = {
     init: function() {
+      const pxPerSecond = 50;
+      gsap.set( '.particle', {backgroundColor: gsap.utils.wrap( ['#589fe4', '#f02d3a', '#51CB20', '#FAC748'] )} );
+      $( '.particle' ).each( function() {
+        gsap.set( $( this ), {x: gsap.utils.random( 0, ( window.innerWidth * 1.15 ) ), y: gsap.utils.random( 0, ( window.innerHeight * 1.15 ) )} );
+      } );
+      function moveMe( target ) {
+        const newPos = {
+          x: gsap.utils.random( 0, ( window.innerWidth * 1.15 ) ),
+          y: gsap.utils.random( 0, ( window.innerHeight * 1.15 ) ),
+        };
+        const curPos = {
+          x: gsap.getProperty( target, 'x' ),
+          y: gsap.getProperty( target, 'y' ),
+        };
+        const deltaX = curPos.x - newPos.x;
+        const deltaY = curPos.y - newPos.y;
+        const distance = Math.hypot( deltaX, deltaY );
+        const duration = distance / pxPerSecond;
+
+        const angleDeg = Math.atan2( newPos.y - curPos.y, newPos.x - curPos.x ) * 180 / Math.PI;
+
+        gsap.to( target, {rotation: angleDeg + '_short', duration: 1} );
+
+        gsap.to( target, {x: newPos.x, y: newPos.y, duration: duration, ease: 'none', onComplete: moveMe, onCompleteParams: [target]} );
+      }
+
+      gsap.utils.toArray( '.particle' ).forEach( ( el ) => moveMe( el ) );
+
+      // $( 'h2' ).on( 'click', function() {
+      //   $( this ).append( '<div class="particle new"></div>' );
+      //   gsap.utils.toArray( '.particle.new' ).forEach( ( el ) => moveMe( el ) );
+      // } );
+
       $( '.navbar-toggle' ).on( 'toggleAfter', ( event ) => {
         $( '.primary-nav' ).slideToggle();
       } );

@@ -89,7 +89,7 @@ if ( $component_data['columns'] == '1' ) {
 ?>
 
 <?php if ( is_empty( $component_data ) ) return; ?>
-<section class="content-grid relative <?php echo $full_screen; ?> <?php echo $background_color; ?> <?php echo $overlay; ?> <?php echo $mp_amount; ?> <?php echo implode( " ", $classes ); ?>" <?php echo ( $component_id ? 'id="'.$component_id.'"' : '' ) ?> data-component="content-grid">
+<section class="content-grid relative <?php echo $full_screen; ?> <?php echo $overlay; ?> <?php echo $mp_amount; ?> <?php echo implode( " ", $classes ); ?>" <?php echo ( $component_id ? 'id="'.$component_id.'"' : '' ) ?> data-component="content-grid">
 
   <?php
     if ( $component_data['background_type'] == 'background-image' ) {
@@ -115,7 +115,7 @@ if ( $component_data['columns'] == '1' ) {
       <div class="col w-full <?php echo $component_data['narrow'] == true && $component_data['columns'] !== '1' ? 'xl:w-10/12' : ''; ?>">
         <div class="row -mb-8 js-fade-group <?php echo $component_data['columns'] == '1' ? 'justify-center' : ''; ?>">
           <?php if (!empty($component_data['intro_content'])) : ?>
-            <div class="col w-full mb-8">
+            <div class="w-full mb-8 col">
               <div class="wysiwyg">
                 <?php if ( !empty( $component_data['intro_content_add_icon'] ) ) : ?>
                   <svg class="block icon icon-<?php echo $component_data['intro_content_icon']['svg_icon']; ?> <?php echo !empty( $component_data['intro_content_center_icon'] ) ? 'mx-auto' : ''; ?> <?php echo $component_data['intro_content_icon_size']; ?> <?php echo intval( $component_data['icon_size'] ) > 14 ? 'mb-10' : 'mb-8'; ?>"><use xlink:href="#icon-<?php echo $component_data['intro_content_icon']['svg_icon']; ?>"></use></svg>

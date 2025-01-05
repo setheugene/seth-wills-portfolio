@@ -50,9 +50,14 @@ module.exports = {
       black: '#000',
       white: '#fff',
       brand: {
-        'jet': '#343434',
+        'jet': '#1a1a1a',
+        'blue': '#589fe4',
+        'red': '#f02d3a',
+        'ivory': '#f2f3f4',
+        'yellow': '#FAC748',
+        'green': '#51CB20',
+
         'gold': '#9d8420',
-        'ivory': '#FEFFF0',
         'rust': '#CA4A00',
 
         'highlight': '#DDDDD',
@@ -90,13 +95,21 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'Teko',
+        'Ubuntu',
         'sans-serif',
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
-      ]
+      ],
+      serif: [
+        'Open Sans',
+        'serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
     },
     fontSize: {
       xs: 12 / 16 + 'rem',

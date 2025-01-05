@@ -4,7 +4,7 @@
 
 body:not(.component-preview) {
   padding-top: var(--topOffset);
-  @apply font-sans text-brand-jet bg-brand-ivory;
+  @apply font-sans bg-brand-jet text-brand-ivory;
 }
 
 @media screen and (max-width: 600px) {
@@ -25,4 +25,22 @@ a {
 
 ::selection {
   background-color: theme(colors.brand.highlight);
+}
+
+#particle-container {
+  position: fixed;
+  width: calc(100% + 20%);
+  height: calc(100% + 20%);
+  top: -10%;
+  right: 0;
+  bottom: 0;
+  left: -10%;
+}
+
+.particle {
+  height: 3px;
+  width: 3px;
+  border-radius: 100%;
+  background-color: theme(colors.brand.ivory);
+  position: absolute;
 }

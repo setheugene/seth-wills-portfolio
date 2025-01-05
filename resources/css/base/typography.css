@@ -1,44 +1,26 @@
 @font-face {
-  font-family: 'Teko';
-  src: url('../fonts/Teko-Bold.woff2') format('woff2'),
-      url('../fonts/Teko-Bold.woff') format('woff');
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+      url('../fonts/OpenSans-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Teko';
-  src: url('../fonts/Teko-Light.woff2') format('woff2'),
-      url('../fonts/Teko-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Teko';
-  src: url('../fonts/Teko-Medium.woff2') format('woff2'),
-      url('../fonts/Teko-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Teko';
-  src: url('../fonts/Teko-SemiBold.woff2') format('woff2'),
-      url('../fonts/Teko-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Teko';
-  src: url('../fonts/Teko-Regular.woff2') format('woff2'),
-      url('../fonts/Teko-Regular.woff') format('woff');
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+      url('../fonts/OpenSans-Regular.woff') format('woff');
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu-Bold.woff2') format('woff2'),
+      url('../fonts/Ubuntu-Bold.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
@@ -48,15 +30,16 @@
 }
 
 .hdg-1 {
-  @apply text-5xl;
+  @apply text-7xl font-sans;
+  line-height: 100%;
 
   @screen md {
-    @apply text-6xl;
+    @apply text-8xl;
   }
 }
 
 .hdg-2 {
-  @apply text-4xl leading-tight;
+  @apply text-4xl leading-tight font-sans;
 
   @screen md {
     @apply text-5xl;
@@ -64,35 +47,35 @@
 }
 
 .hdg-3 {
-  @apply text-4xl leading-tight;
+  @apply text-4xl leading-tight font-sans;
 }
 
 .hdg-4 {
-  @apply text-3xl leading-tight;
+  @apply text-3xl leading-tight font-sans;
 }
 
 .hdg-5 {
-  @apply text-2xl leading-snug;
+  @apply text-2xl leading-snug font-sans;
 }
 
 .hdg-6 {
-  @apply text-xl leading-tight;
+  @apply text-xl leading-tight font-sans;
 }
 
 .paragraph-default {
-  @apply text-base leading-normal;
+  @apply text-base leading-normal font-serif;
 }
 
 .paragraph-large {
-  @apply text-lg leading-normal;
+  @apply text-lg leading-normal font-serif;
 }
 
 .paragraph-small {
-  @apply text-sm leading-normal;
+  @apply text-sm leading-normal font-serif;
 }
 
 .paragraph-xsmall {
-  @apply text-xs leading-normal;
+  @apply text-xs leading-normal font-serif;
 }
 
 /*

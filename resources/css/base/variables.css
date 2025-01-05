@@ -8,7 +8,7 @@
  * Can be updated with media queries for smaller gutters on smaller screens
  */
 :root {
-  --navbarHeight: 80px;
+  --navbarHeight: 59px;
 
   --topOffset: calc( var(--navbarHeight) + var(--wp-admin--admin-bar--height, 0px) );
 
