@@ -1,6 +1,7 @@
 <?php
 function get_component_pages() {
 return [
+'Technologies',
 'Projects',
 'Global Component',
 'Image Grid',

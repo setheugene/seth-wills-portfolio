@@ -1,7 +1,7 @@
 <?php
   $primary_menu   = new Menu( 'primary_navigation' );
 ?>
-<header class="flex items-center py-4 navbar text-brand-jet bg-brand-ivory/40 backdrop-blur-sm" role="banner">
+<header class="flex items-center py-4 navbar text-brand-jet bg-brand-ivory/60 backdrop-blur-[2px]" role="banner">
   <div class="container relative flex items-end h-full">
     <div class="flex items-end justify-between w-full flex-nowrap">
 
@@ -19,7 +19,7 @@
           <?php if ( $primary_menu->items ) : ?>
             <?php foreach( $primary_menu->items as $menu_item ) : ?>
               <li class="mr-8 primary-menu-item last:mr-0">
-                <<?php echo $menu_item->has_children ? 'button' : 'a'; ?> class="inline-block font-bold duration-200 paragraph-large hover:text-brand-gold text-brand-jet"
+                <<?php echo $menu_item->has_children ? 'button' : 'a'; ?> class="inline-block font-bold duration-200 paragraph-large text-brand-jet"
                   <?php if( $menu_item->has_children ) : ?>
                     data-toggle-class="is-open"
                     data-toggle-target="#menu-<?php echo $menu_item->ID; ?>" aria-expanded="false"

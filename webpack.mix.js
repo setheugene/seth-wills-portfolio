@@ -46,6 +46,8 @@ if (!process.argv.includes('--watch-admin')) {
     'resources/js/vendor/easy-toggle-state.js',
     'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
     'node_modules/slick-carousel/slick/slick.min.js',
+    'node_modules/@splidejs/splide/dist/js/splide.min.js',
+    'node_modules/@splidejs/splide-extension-auto-scroll/dist/js/splide-extension-auto-scroll.min.js',
   ];
 
   mix.postCss('resources/css/reset.css', 'css/reset.min.css').sourceMaps();

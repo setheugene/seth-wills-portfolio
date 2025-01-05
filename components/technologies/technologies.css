@@ -1,0 +1,31 @@
+/**
+ * Technologies Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.technologies {
+  .tech-name {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  .technologies__sliders-wrapper:hover {
+    .icon {
+      filter: blur(3px);
+    }
+    .splide__slide:hover {
+      .icon {
+        filter: blur(0);
+        opacity: 0.5;
+
+      }
+
+      .tech-name {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+  }
+}

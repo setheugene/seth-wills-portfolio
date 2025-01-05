@@ -460,6 +460,60 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "layout_677af3cf9a419",
+                    "name": "technologies",
+                    "label": "Technologies",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_677af3cf9a829",
+                            "label": "Meta",
+                            "name": "meta",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5d0d37eae4bed"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
+                        },
+                        {
+                            "key": "field_677af3cf9ac47",
+                            "label": "Technologies Fields",
+                            "name": "fields",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_677af35e0e8c5"
+                            ],
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "display": "seamless",
+                            "layout": "block"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ],
             "min": "",
