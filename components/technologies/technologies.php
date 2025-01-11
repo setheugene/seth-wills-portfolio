@@ -22,8 +22,8 @@ $bottom_row = $component_data['bottom_row'];
 <?php if ( is_empty( $component_data ) ) return; ?>
 <section class="technologies py-20 relative <?php echo implode( " ", $classes ); ?>" <?php echo ( $component_id ? 'id="'.$component_id.'"' : '' ); ?> data-component="technologies">
   <div class="container flex justify-center mb-12">
-    <div class="px-8 py-5 rounded-lg w-fit bg-brand-ivory/90 mix-blend-exclusion backdrop-blur-[2px]">
-      <h2 class="text-center text-brand-jet hdg-1">Technologies</h2>
+    <div class="">
+      <h2 class="text-center text-brand-ivory hdg-1">Technologies</h2>
     </div>
   </div>
   <div class="flex flex-col gap-10 overflow-hidden technologies__sliders-wrapper group">

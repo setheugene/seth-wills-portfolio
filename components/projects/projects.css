@@ -7,5 +7,83 @@
  */
 
 .projects {
+  #grid-layout {
+    margin: 0;
+    height: 450px;
+  }
 
+  .projects__grid {
+    margin-left: auto;
+    margin-right: auto;
+    grid-column-gap: 1rem;
+    height: 100%;
+    grid-row-gap: 1rem;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      "tile-2 tile-2 tile-3 tile-3 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
+      "tile-2 tile-2 tile-3 tile-3 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
+      "tile-2 tile-2 tile-3 tile-3 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
+      "tile-4 tile-4 tile-5 tile-5 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
+      "tile-4 tile-4 tile-5 tile-5 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
+      "tile-4 tile-4 tile-5 tile-5 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1";
+  }
+  .grid-tile {
+    box-sizing: border-box;
+    border-radius: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  [data-grid="tile-1"] {
+    grid-area: tile-1;
+    mix-blend-mode: normal;
+    cursor: default;
+    .grid-tile__overlay {
+      opacity: 0.75;
+    }
+    .fit-image {
+      opacity: 1;
+    }
+
+    .grid-tile__large-heading {
+      opacity: 1;
+    }
+    .grid-tile__small-heading {
+      opacity: 0;
+    }
+    .grid-tile__bg-color {
+      opacity: 0;
+    }
+  }
+  [data-grid="tile-2"] {
+    grid-area: tile-2;
+    &:hover .grid-tile__bg-color {
+      background-color: theme(colors.brand.ivory);
+    }
+  }
+  [data-grid="tile-3"] {
+    grid-area: tile-3;
+    &:hover .grid-tile__bg-color {
+      background-color: theme(colors.brand.ivory);
+    }
+  }
+  [data-grid="tile-4"] {
+    grid-area: tile-4;
+    &:hover .grid-tile__bg-color {
+      background-color: theme(colors.brand.ivory);
+    }
+  }
+  [data-grid="tile-5"] {
+    grid-area: tile-5;
+    &:hover .grid-tile__bg-color {
+      background-color: theme(colors.brand.ivory);
+    }
+  }
 }

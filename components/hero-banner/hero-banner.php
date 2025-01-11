@@ -28,10 +28,10 @@ $component_data = parse_args( $component_data, $defaults );
       <div class="w-full col">
         <div class="justify-between row">
           <div class="w-full col lg:w-1/2 ">
-            <div class="p-10 -mt-[100px] rounded-lg  bg-brand-ivory/90 mix-blend-exclusion backdrop-blur-[2px]">
-              <div class="wysiwyg text-brand-jet">
+            <div class="">
+              <div class="wysiwyg text-brand-ivory">
                 <?php if( $component_data['heading'] && $component_data['heading']['text'] ) : ?>
-                  <<?php echo $component_data['heading']['tag']; ?> class="mb-0 hdg-1 text-brand-jet js-fade"><?php echo $component_data['heading']['text']; ?></<?php echo $component_data['heading']['tag']; ?>>
+                  <<?php echo $component_data['heading']['tag']; ?> class="mb-0 hdg-1 text-brand-ivory js-fade"><?php echo $component_data['heading']['text']; ?></<?php echo $component_data['heading']['tag']; ?>>
                 <?php endif; ?>
                 <div class="wysiwyg">
                   <?php echo $component_data['content']; ?>

@@ -9,9 +9,11 @@
  * Example of importing modules if needed. Like for scroll magic / gsap
  */
 
-// import {gsap} from 'gsap';
-// import {ScrollTrigger} from 'gsap/ScrollTrigger.js';
-// gsap.registerPlugin( ScrollTrigger );
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger.js';
+import {Flip} from 'gsap/Flip.js';
+gsap.registerPlugin( ScrollTrigger );
+gsap.registerPlugin( Flip );
 ( function( app ) {
   const COMPONENT = {
 
@@ -21,16 +23,38 @@
     },
     // Fires after common.init, before .finalize and common.finalize
     init: function() {
-      const projects = $( '.projects__title' );
-      projects.each( function() {
-        const target = $( this ).data( 'target' );
-        $( this ).on( 'mouseover', function() {
-          $( target ).css( 'opacity', 1 );
-        } );
-        $( this ).on( 'mouseout', function() {
-          $( target ).css( 'opacity', 0 );
-        } );
+      const tiles = gsap.utils.toArray( '.grid-tile' );
+      console.log( 'Tiles: ' + tiles );
+      let active = tiles[0];
+
+      tiles.forEach( ( el ) => {
+        if ( el.classList.contains( 'clickable-false' ) ) {
+          el.addEventListener( 'click', function( e ) {
+            e.preventDefault(); // Cancel the native event
+            e.stopPropagation(); // Don't bubble/capture the event any further
+          } );
+        } else {
+          el.addEventListener( 'click', () => changeGrid( el ) );
+        }
       } );
+
+      console.log( 'Active: ' + active );
+
+      function changeGrid( el ) {
+        console.log( 'El: ' + el );
+        if ( el === active ) return;
+
+        const state = Flip.getState( tiles );
+        active.dataset.grid = el.dataset.grid;
+        el.dataset.grid = 'tile-1';
+        active = el;
+
+        Flip.from( state, {
+          duration: 0.85,
+          absolute: true,
+          ease: 'power3.inOut',
+        } );
+      }
     },
     finalize: function() {
     },
