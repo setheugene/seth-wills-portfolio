@@ -21,6 +21,16 @@
     },
     // Fires after common.init, before .finalize and common.finalize
     init: function() {
+      const projects = $( '.projects__title' );
+      projects.each( function() {
+        const target = $( this ).data( 'target' );
+        $( this ).on( 'mouseover', function() {
+          $( target ).css( 'opacity', 1 );
+        } );
+        $( this ).on( 'mouseout', function() {
+          $( target ).css( 'opacity', 0 );
+        } );
+      } );
     },
     finalize: function() {
     },

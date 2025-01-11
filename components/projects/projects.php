@@ -27,24 +27,34 @@ $projects = $component_data['projects'];
     </div>
   </div>
   <?php if(!empty($projects)) : ?>
-    <div class="">
-      <div class="grid grid-cols-2">
-        <?php foreach($projects as $key => $project_id) : ?>
-          <div class="relative flex items-center justify-center group border-b border-brand-ivory/50 <?= $key % 2 ? '' : 'border-r'; ?>">
-            <h3 class="relative z-10 px-[180px] py-20 text-center hdg-4 opacity-100 group-hover:opacity-0 pointer-events-none">
-              <?= get_field('project_name', $project_id) ?>
-            </h3>
-            <div class="absolute inset-0 grid grid-cols-2 size-full">
-              <a href="<?= get_field('project_code', $project_id) ?>" target="_blank" class="flex items-center justify-center font-bold text-center duration-300 border-r opacity-0 paragraph-large size-full border-brand-ivory/50 group-hover:opacity-100 hover:bg-brand-red/40 hover:backdrop-blur-sm">
-                See Code
-              </a>
-              <a href="<?= get_field('project_site', $project_id) ?>" target="_blank" class="flex items-center justify-center font-bold text-center duration-300 border-r opacity-0 paragraph-large size-full border-brand-ivory/50 group-hover:opacity-100 hover:bg-brand-blue/40 hover:backdrop-blur-sm">
-                Go to Site
-              </a>
-            </div>
+    <div class="relative flex flex-col items-center justify-center h-screen space-y-10">
+      <?php foreach($projects as $key => $project_id) : ?>
+        <div id="project-<?= $project_id ?>" class="duration-500 ease-in-out opacity-0 pointer-events-none [&.is-active]:opacity-100">
+          <?php
+            include_component(
+              'fit-image',
+              array(
+                'image_id' => get_post_thumbnail_id($project_id),
+                'thumbnail_size' => 'large',
+                'position' => '',
+                'fit' =>  '',
+                'loading' => '',
+              )
+            );
+          ?>
+        </div>
+        <div class="relative z-10 w-full group projects__title" data-target="#project-<?= $project_id ?>">
+          <h3 class="text-center duration-300 text-brand-ivory group-hover:opacity-0 hdg-3"><?= get_field('project_name', $project_id) ?></h3>
+          <div class="absolute top-[100%] left-0 grid grid-cols-2 duration-300 opacity-0 size-full group-hover:opacity-100">
+            <a href="<?= get_field('project_code', $project_id) ?>" target="_blank" class="flex items-center justify-center font-bold text-center duration-300 border-r opacity-0 paragraph-large size-full border-brand-ivory/50 group-hover:opacity-100 hover:bg-brand-red/40 hover:backdrop-blur-sm">
+              See Code
+            </a>
+            <a href="<?= get_field('project_site', $project_id) ?>" target="_blank" class="flex items-center justify-center font-bold text-center duration-300 border-r opacity-0 paragraph-large size-full border-brand-ivory/50 group-hover:opacity-100 hover:bg-brand-blue/40 hover:backdrop-blur-sm">
+              Go to Site
+            </a>
           </div>
-        <?php endforeach; ?>
-      </div>
+        </div>
+      <?php endforeach; ?>
     </div>
   <?php endif; ?>
 </section>

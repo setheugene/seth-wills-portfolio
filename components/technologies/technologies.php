@@ -29,7 +29,7 @@ $bottom_row = $component_data['bottom_row'];
   <div class="flex flex-col gap-10 overflow-hidden technologies__sliders-wrapper group">
     <?php if( !empty($top_row) ) : ?>
       <div class="splide technologies__top-splide">
-        <div class="mx-6 overflow-visible splide__track">
+        <div class="overflow-visible splide__track">
           <div class="splide__list">
             <?php foreach( $top_row as $icon ) :  ?>
               <div class="relative flex justify-center splide__slide">
@@ -45,7 +45,7 @@ $bottom_row = $component_data['bottom_row'];
     <?php endif; ?>
     <?php if( !empty($bottom_row) ) : ?>
       <div class="splide technologies__bottom-splide">
-        <div class="mx-6 overflow-visible splide__track">
+        <div class="overflow-visible splide__track">
           <div class="splide__list">
             <?php foreach( $bottom_row as $icon ) : ?>
               <div class="flex justify-center splide__slide">
