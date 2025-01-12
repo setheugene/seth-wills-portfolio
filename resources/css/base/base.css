@@ -44,3 +44,27 @@ a {
   background-color: theme(colors.brand.ivory);
   position: absolute;
 }
+#blob-container {
+  position: fixed;
+  width: calc(100% + 20%);
+  height: calc(100% + 20%);
+  top: -10%;
+  right: 0;
+  bottom: 0;
+  left: -10%;
+  background-color: theme(colors.brand.ivory);
+  filter: blur(4px);
+}
+.blob {
+  position: absolute;
+  border-radius: 100%;
+  filter: blur(14px);
+  opacity: 100%;
+  mix-blend-mode: color-burn;
+}
+.absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

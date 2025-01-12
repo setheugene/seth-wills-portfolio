@@ -8,6 +8,7 @@ module.exports = {
     './index.php',
     './base.php',
     './404.php',
+    './single-project.php',
     /*
      * Include files that have css classes that need to be rendered
      * Files and folders that don't exist should not be included

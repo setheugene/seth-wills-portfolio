@@ -14,12 +14,8 @@ import {gsap} from 'gsap';
 ( function( app ) {
   const COMPONENT = {
     init: function() {
-      const pxPerSecond = 50;
-      gsap.set( '.particle', {backgroundColor: gsap.utils.wrap( ['#589fe4', '#f02d3a', '#51CB20', '#FAC748'] )} );
-      $( '.particle' ).each( function() {
-        gsap.set( $( this ), {x: gsap.utils.random( 0, ( window.innerWidth * 1.15 ) ), y: gsap.utils.random( 0, ( window.innerHeight * 1.15 ) )} );
-      } );
       function moveMe( target ) {
+        const pxPerSecond = 50;
         const newPos = {
           x: gsap.utils.random( 0, ( window.innerWidth * 1.15 ) ),
           y: gsap.utils.random( 0, ( window.innerHeight * 1.15 ) ),
@@ -39,8 +35,26 @@ import {gsap} from 'gsap';
 
         gsap.to( target, {x: newPos.x, y: newPos.y, duration: duration, ease: 'none', onComplete: moveMe, onCompleteParams: [target]} );
       }
+      if ( $( '.particle' ).length > 0 ) {
+        gsap.set( '.particle', {backgroundColor: gsap.utils.wrap( ['#589fe4', '#f02d3a', '#51CB20', '#FAC748'] )} );
+        $( '.particle' ).each( function() {
+          gsap.set( $( this ), {x: gsap.utils.random( 0, ( window.innerWidth * 1.15 ) ), y: gsap.utils.random( 0, ( window.innerHeight * 1.15 ) )} );
+        } );
 
-      gsap.utils.toArray( '.particle' ).forEach( ( el ) => moveMe( el ) );
+        gsap.utils.toArray( '.particle' ).forEach( ( el ) => moveMe( el ) );
+      }
+      if ( $( '.blob' ).length > 0 ) {
+        gsap.set( '.blob', {
+          backgroundColor: gsap.utils.wrap( ['#589fe4', '#f02d3a', '#51CB20', '#FAC748'] ),
+          height: gsap.utils.wrap( ['300px', '400px', '350px', '250px'] ),
+          width: gsap.utils.wrap( ['300px', '400px', '350px', '250px'] ),
+        } );
+        $( '.blob' ).each( function() {
+          gsap.set( $( this ), {x: gsap.utils.random( 0, ( window.innerWidth * 1.15 ) ), y: gsap.utils.random( 0, ( window.innerHeight * 1.15 ) )} );
+        } );
+
+        gsap.utils.toArray( '.blob' ).forEach( ( el ) => moveMe( el ) );
+      }
 
       // $( 'h2' ).on( 'click', function() {
       //   $( this ).append( '<div class="particle new"></div>' );

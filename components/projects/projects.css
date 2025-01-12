@@ -8,8 +8,7 @@
 
 .projects {
   #grid-layout {
-    margin: 0;
-    height: 450px;
+    height: 500px;
   }
 
   .projects__grid {
@@ -21,14 +20,11 @@
     padding: 1em;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
       "tile-2 tile-2 tile-3 tile-3 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
-      "tile-2 tile-2 tile-3 tile-3 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
-      "tile-2 tile-2 tile-3 tile-3 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
       "tile-4 tile-4 tile-5 tile-5 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
-      "tile-4 tile-4 tile-5 tile-5 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1"
-      "tile-4 tile-4 tile-5 tile-5 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1";
+      "tile-6 tile-6 tile-7 tile-7 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1 tile-1";
   }
   .grid-tile {
     box-sizing: border-box;
@@ -46,7 +42,7 @@
     mix-blend-mode: normal;
     cursor: default;
     .grid-tile__overlay {
-      opacity: 0.75;
+      opacity: 0.60;
     }
     .fit-image {
       opacity: 1;
@@ -60,6 +56,9 @@
     }
     .grid-tile__bg-color {
       opacity: 0;
+    }
+    a {
+      pointer-events: auto;
     }
   }
   [data-grid="tile-2"] {
@@ -82,6 +81,18 @@
   }
   [data-grid="tile-5"] {
     grid-area: tile-5;
+    &:hover .grid-tile__bg-color {
+      background-color: theme(colors.brand.ivory);
+    }
+  }
+  [data-grid="tile-6"] {
+    grid-area: tile-6;
+    &:hover .grid-tile__bg-color {
+      background-color: theme(colors.brand.ivory);
+    }
+  }
+  [data-grid="tile-7"] {
+    grid-area: tile-7;
     &:hover .grid-tile__bg-color {
       background-color: theme(colors.brand.ivory);
     }

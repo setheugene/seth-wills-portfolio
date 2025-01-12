@@ -1,8 +1,23 @@
-.btn {
-  @apply inline-block py-3.5 px-8 rounded-lg bg-form-radio-button-unchecked text-white duration-150;
+.btn-secondary {
+  position: relative;
+  width: fit-content;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background-color: theme(colors.brand.ivory);
+    transform: translateX(-50%);
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+  }
 
   &:hover {
-    @apply bg-form-radio-button-checked;
+    &::after {
+      width: 100%;
+    }
   }
 }
 
