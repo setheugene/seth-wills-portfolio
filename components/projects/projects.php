@@ -10,18 +10,25 @@ $classes = $component_args['classes'] ?? [];
 $component_id = $component_args['id'] ?? false;
 $defaults = [
   'projects' => [],
+  'code_popup' => null,
 ];
 
 $component_data = parse_args( $component_data, $defaults );
 
 $projects = $component_data['projects'];
+$code_popup = $component_data['code_popup'];
 ?>
 
 <?php if ( is_empty( $component_data ) ) return; ?>
 <section class="projects py-20 relative z-10 <?php echo implode( " ", $classes ); ?>" <?php echo ( $component_id ? 'id="'.$component_id.'"' : '' ); ?> data-component="projects">
   <div class="mb-12">
     <div class="container">
-      <h2 class="text-center text-brand-ivory hdg-1">Projects</h2>
+      <h2 class="relative mx-auto text-center w-fit text-brand-ivory hdg-1">
+        Projects
+        <button class="absolute top-0 flex items-center justify-center duration-300 rounded-full hover:bg-brand-green -right-6 size-6 text-brand-jet bg-brand-ivory js-init-popup" data-modal="#projects__code-snippet" data-component="modal">
+          <svg class='size-4 icon icon-code' aria-hidden='true'><use xlink:href='#icon-code'></use></svg>
+        </button>
+      </h2>
     </div>
   </div>
   <?php if(!empty($projects)) : ?>
@@ -55,3 +62,21 @@ $projects = $component_data['projects'];
     </div>
   <?php endif; ?>
 </section>
+<?php if( $code_popup ) : ?>
+  <div id="projects__code-snippet" class="modal_code-snippet mfp-hide modal code-modal">
+    <div class="relative aspect-square">
+      <?php
+        include_component(
+          'fit-image',
+          array(
+            'image_id' => $code_popup['image_id'],
+            'thumbnail_size' => 'large',
+            'position' => $code_popup['image_focus_point'],
+            'fit' =>  $code_popup['image_fit'],
+            'loading' => 'eager',
+          )
+        );
+      ?>
+    </div>
+  </div>
+<?php endif; ?>

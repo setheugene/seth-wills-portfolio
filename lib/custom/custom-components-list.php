@@ -1,6 +1,7 @@
 <?php
 function get_component_pages() {
 return [
+'Highlights',
 'Technologies',
 'Projects',
 'Global Component',

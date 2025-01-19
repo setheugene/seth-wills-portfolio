@@ -24,24 +24,13 @@ gsap.registerPlugin( Flip );
     // Fires after common.init, before .finalize and common.finalize
     init: function() {
       const tiles = gsap.utils.toArray( '.grid-tile' );
-      console.log( 'Tiles: ' + tiles );
       let active = tiles[0];
 
       tiles.forEach( ( el ) => {
-        if ( el.classList.contains( 'clickable-false' ) ) {
-          el.addEventListener( 'click', function( e ) {
-            e.preventDefault(); // Cancel the native event
-            e.stopPropagation(); // Don't bubble/capture the event any further
-          } );
-        } else {
-          el.addEventListener( 'click', () => changeGrid( el ) );
-        }
+        el.addEventListener( 'click', () => changeGrid( el ) );
       } );
 
-      console.log( 'Active: ' + active );
-
       function changeGrid( el ) {
-        console.log( 'El: ' + el );
         if ( el === active ) return;
 
         const state = Flip.getState( tiles );

@@ -1,8 +1,8 @@
 <?php
   $primary_menu   = new Menu( 'primary_navigation' );
 ?>
-<header class="flex items-center py-4 navbar text-brand-jet bg-brand-ivory/60 backdrop-blur-[2px]" role="banner">
-  <div class="container relative flex items-end h-full">
+<header class="flex px-8 items-center py-4 navbar text-brand-jet bg-brand-ivory/60 backdrop-blur-[2px]" role="banner">
+  <div class="relative flex items-end w-full h-full">
     <div class="flex items-end justify-between w-full flex-nowrap">
 
       <button type="button" class="md:hidden navbar-toggle" data-toggle-class="is-open" data-toggle-target="#primary-nav">

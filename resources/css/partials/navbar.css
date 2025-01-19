@@ -6,9 +6,11 @@
  */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100dvw - 4rem);
+  border-radius: 40px;
   /* height: var(--navbarHeight); */
   z-index: 90;
 

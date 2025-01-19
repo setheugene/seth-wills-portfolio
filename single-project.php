@@ -1,15 +1,12 @@
-<?php
-$project_id = get_the_ID();
-?>
 <section class="relative z-10 flex items-center text-brand-jet">
   <div class="container">
-    <div class="justify-between row min-h-[calc(100dvh_-_var(--topOffset))]">
+    <div class="justify-between min-h-[100dvh] row">
       <div class="self-center w-full col lg:w-6/12">
         <h1 class="mb-1 hdg-6">
           Project:
         </h1>
         <h2 class="hdg-1">
-          <?= get_field('project_name', $project_id) ?>
+          <?= get_field('project_name') ?>
         </h2>
       </div>
       <div class="self-start w-full col lg:w-4/12">
@@ -46,11 +43,10 @@ $project_id = get_the_ID();
               JQuery, Tailwind, GSAP, Slick Slider
             </p>
           </div>
-          <a href="#" class="absolute right-6 top-6 group">
-
-            <div class="duration-200 border rounded-full size-20 group-hover:size-[120px] absolute-center border-brand-blue"></div>
+          <a href="<?= the_field('project_url') ?>" class="absolute right-6 top-6 group" target="_blank">
             <div class="relative flex items-center justify-center p-2 rounded-full size-[90px] bg-brand-ivory">
-              <p class="z-10 w-full font-bold text-center duration-300 text-brand-jet paragraph-default">
+              <div class="duration-200 rounded-full z-10 size-[90px] scale-0 group-hover:scale-100 absolute left-1/2 top-1/2 -translate-x-[50%] -translate-y-[50%] bg-brand-blue"></div>
+              <p class="z-20 w-full font-bold text-center duration-300 text-brand-jet paragraph-default">
                 Visit Site
               </p>
             </div>
@@ -60,3 +56,11 @@ $project_id = get_the_ID();
     </div>
   </div>
 </section>
+<?php
+  include_component(
+    'highlights',
+    array(
+      'title' => 'highlights',
+    )
+  );
+?>

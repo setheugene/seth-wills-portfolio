@@ -23,7 +23,7 @@ $bottom_row = $component_data['bottom_row'];
 <section class="technologies py-20 relative <?php echo implode( " ", $classes ); ?>" <?php echo ( $component_id ? 'id="'.$component_id.'"' : '' ); ?> data-component="technologies">
   <div class="container flex justify-center mb-12">
     <div class="">
-      <h2 class="text-center text-brand-ivory hdg-1">Technologies</h2>
+      <h2 class="text-center text-brand-ivory hdg-1">Tools</h2>
     </div>
   </div>
   <div class="flex flex-col gap-10 overflow-hidden technologies__sliders-wrapper group">
