@@ -60,7 +60,14 @@
   include_component(
     'highlights',
     array(
-      'title' => 'highlights',
+      'highlights' => get_field('highlights') ?? [],
     )
   );
 ?>
+<section class="relative z-10 flex items-center justify-between w-full py-3 credits bg-brand-jet/90">
+  <div class="container">
+    <p class="hdg-5 text-brand-ivory">
+      Developed while working for Lifted Logic
+    </p>
+  </div>
+</section>

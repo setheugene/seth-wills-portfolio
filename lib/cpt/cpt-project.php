@@ -45,7 +45,7 @@ if ( ! function_exists('register_project_custom_post_type') ) {
       'supports'            => array( 'title', 'page-attributes', 'thumbnail' ),
       // 'taxonomies'          => array( 'category', 'post_tag' ),
       'hierarchical'        => true,
-      'public'              => false,
+      'public'              => true,
       'show_ui'             => true,
       'show_in_menu'        => true,
       'show_in_nav_menus'   => true,

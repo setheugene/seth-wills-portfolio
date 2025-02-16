@@ -12,6 +12,6 @@
 
   --topOffset: calc( var(--navbarHeight) + var(--wp-admin--admin-bar--height, 0px) );
 
-  --gutter: .5rem;
+  --gutter: 2rem;
 }
 

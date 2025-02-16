@@ -8,6 +8,12 @@ Wysiwyg()->add_format( array(
       'classes'  => 'text-white',
       'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
       'wrapper'  => false,
-    )
+    ),
+    array(
+      'title'    => 'Black',
+      'classes'  => 'text-brand-jet',
+      'selector' => 'p, a, span, li, h1, h2, h3, h4, h5, h6',
+      'wrapper'  => false,
+    ),
   )
 ) );

@@ -30,7 +30,7 @@
 }
 
 .hdg-1 {
-  @apply text-7xl font-sans;
+  @apply font-sans text-7xl;
   line-height: 100%;
 
   @screen md {
@@ -39,7 +39,7 @@
 }
 
 .hdg-2 {
-  @apply text-4xl leading-tight font-sans;
+  @apply font-sans text-4xl leading-tight;
 
   @screen md {
     @apply text-5xl;
@@ -47,35 +47,35 @@
 }
 
 .hdg-3 {
-  @apply text-4xl leading-tight font-sans;
+  @apply font-sans text-4xl leading-tight;
 }
 
 .hdg-4 {
-  @apply text-3xl leading-tight font-sans;
+  @apply font-sans text-3xl leading-tight;
 }
 
 .hdg-5 {
-  @apply text-2xl leading-snug font-sans;
+  @apply font-sans text-2xl leading-snug;
 }
 
 .hdg-6 {
-  @apply text-xl leading-tight font-sans;
+  @apply font-sans text-xl leading-tight;
 }
 
 .paragraph-default {
-  @apply text-base leading-normal font-serif;
+  @apply font-serif text-base leading-normal;
 }
 
 .paragraph-large {
-  @apply text-lg leading-normal font-serif;
+  @apply font-serif text-lg leading-normal;
 }
 
 .paragraph-small {
-  @apply text-sm leading-normal font-serif;
+  @apply font-serif text-sm leading-normal;
 }
 
 .paragraph-xsmall {
-  @apply text-xs leading-normal font-serif;
+  @apply font-serif text-xs leading-normal;
 }
 
 /*

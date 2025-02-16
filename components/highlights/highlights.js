@@ -29,7 +29,7 @@ gsap.registerPlugin( ScrollTrigger );
           trigger: '.highlights',
           pin: true,
           markers: true,
-          start: 'top top+=91px',
+          start: 'top top',
           scrub: 1,
           snap: 1 / ( sections.length - 1 ),
           end: () => '+=' + document.querySelector( '.highlights' ).offsetWidth,

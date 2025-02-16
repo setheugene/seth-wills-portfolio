@@ -10,6 +10,7 @@
  */
 import {gsap} from 'gsap';
 import {SplitText} from 'gsap/SplitText';
+import {ScrollTrigger} from 'gsap/ScrollTrigger.js';
 gsap.registerPlugin( SplitText );
 ( function( app ) {
   const COMPONENT = {
@@ -20,7 +21,15 @@ gsap.registerPlugin( SplitText );
     },
     // Fires after common.init, before .finalize and common.finalize
     init: function() {
-      const slides = $( '.hero-banner__slide' );
+      const st = ScrollTrigger.create( {
+        trigger: '.hero-banner',
+        pin: true,
+        start: 'top top',
+        end: 'bottom top',
+        pinSpacing: false,
+      } );
+
+      const buttons = $( '.hero-banner__slide-btn' );
       const images = $( '.hero-banner__image' );
       const contents = $( '.hero-banner__content h1' );
 
@@ -49,30 +58,53 @@ gsap.registerPlugin( SplitText );
 
       let activeIndex = 0;
 
-      function goToNext() {
+      $( '.hero-banner__slide-btn' ).on( 'click', function() {
+        const slideIndex = $( this ).data( 'hero-banner-slide-key' );
+        goToIndex( slideIndex );
+        buttons.removeClass( 'is-active' );
+        $( this ).addClass( 'is-active' );
+      } );
+
+      function goToIndex( slideIndex ) {
         const activeContent = contents[activeIndex];
-        let nextContent = contents[activeIndex + 1];
+        const nextContent = contents[slideIndex];
 
         const activeImage = images[activeIndex];
-        let nextImage = images[activeIndex + 1];
+        const nextImage = images[slideIndex];
 
         gsap.to( activeImage, {yPercent: 100, delay: 0.15} ),
         gsap.to( activeContent.children, {yPercent: 200, opacity: 0} );
 
-
-        if ( activeIndex + 1 === slides.length ) {
-          activeIndex = 0;
-          nextContent = contents[0];
-          nextImage = images[0];
-        } else {
-          activeIndex ++;
-        }
-
         gsap.to( nextImage, {yPercent: 0, delay: 0.15} ),
-        gsap.to( nextContent.children, {yPercent: 0, stagger: .2, opacity: 1}, '>.15' );
+        gsap.to( nextContent.children, {yPercent: 0, stagger: .2, opacity: 1} );
+
+        activeIndex = slideIndex;
       }
+
+      // function goToNext() {
+      //   const activeContent = contents[activeIndex];
+      //   let nextContent = contents[activeIndex + 1];
+
+      //   const activeImage = images[activeIndex];
+      //   let nextImage = images[activeIndex + 1];
+
+      //   gsap.to( activeImage, {yPercent: 100, delay: 0.15} ),
+      //   gsap.to( activeContent.children, {yPercent: 200, opacity: 0} );
+
+
+      //   if ( activeIndex + 1 === slides.length ) {
+      //     activeIndex = 0;
+      //     nextContent = contents[0];
+      //     nextImage = images[0];
+      //   } else {
+      //     activeIndex ++;
+      //   }
+
+      //   gsap.to( nextImage, {yPercent: 0, delay: 0.15} ),
+      //   gsap.to( nextContent.children, {yPercent: 0, stagger: .2, opacity: 1} );
+      // }
       // setInterval( goToNext, 6000 );
-      $( '.hero-banner__button' ).on( 'click', goToNext );
+      // $( '.hero-banner' ).on( 'click', goToNext );
     },
     finalize: function() {
     },

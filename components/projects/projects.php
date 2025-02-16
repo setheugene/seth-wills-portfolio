@@ -20,7 +20,7 @@ $code_popup = $component_data['code_popup'];
 ?>
 
 <?php if ( is_empty( $component_data ) ) return; ?>
-<section class="projects py-20 relative z-10 <?php echo implode( " ", $classes ); ?>" <?php echo ( $component_id ? 'id="'.$component_id.'"' : '' ); ?> data-component="projects">
+<section class="projects bg-brand-charcoal pt-20 relative md:min-h-screen z-10 <?php echo implode( " ", $classes ); ?>" <?php echo ( $component_id ? 'id="'.$component_id.'"' : '' ); ?> data-component="projects">
   <div class="mb-12">
     <div class="container">
       <h2 class="relative mx-auto text-center w-fit text-brand-ivory hdg-1">

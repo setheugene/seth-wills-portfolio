@@ -57,6 +57,7 @@ module.exports = {
         'ivory': '#f2f3f4',
         'yellow': '#FAC748',
         'green': '#51CB20',
+        'charcoal': '#333333',
 
         'gold': '#9d8420',
         'rust': '#CA4A00',
